@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-)xhn(6mpui!wm%l%byn5ii%#0je2bj6swi3siy4x+c_+&8(xgb
 # ALLOWED_HOSTS = []
 
 DEBUG = False
-ALLOWED_HOSTS = ['84.247.167.169']
+ALLOWED_HOSTS = ['84.247.167.169' , 'fyp.jstechnologies.tech']
 
 
 # Application definition
