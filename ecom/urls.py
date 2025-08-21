@@ -16,6 +16,8 @@ router.register(r'messages', MessageViewSet, basename='messages')
 
 # ✅ Custom URL patterns
 urlpatterns = [
+    path('home/', views.home, name='home'),
+
     path('add_to_cart/', views.AddToCart.as_view(), name='add_to_cart'),
     path('update_cart/', views.UpdateCart.as_view(), name='update_cart'),
     path('remove_cart_item/<int:id>/', views.DeleteCartItem.as_view(), name='remove_cart_item'),

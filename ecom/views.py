@@ -265,3 +265,8 @@ def clear_cart(request):
         return Response({"info": "No draft cart to clear"}, status=200)
     except StockSaleMain.DoesNotExist:
         return Response({"error": "No draft invoice found"}, status=404)
+
+
+
+def home(request):
+    return render(request, 'home.html')  # ✅ Render home template
