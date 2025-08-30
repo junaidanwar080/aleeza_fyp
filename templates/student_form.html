@@ -1,0 +1,90 @@
+{% load widget_tweaks %}
+{% include 'base.html' %}
+
+<!-- {% block title %}{{ form.instance.pk|yesno:"Edit Student,Add Student" }}{% endblock %} -->
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">{{ form.instance.pk|yesno:"Edit Student,Add Student" }}</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Image Preview -->
+        <!-- {% if form.instance.image %}
+            <div class="mb-3 text-center">
+                <img src="{{ form.instance.image.url }}" alt="Student Image" class="img-thumbnail" style="max-width:150px;">
+            </div>
+        {% endif %} -->
+
+        <div class="mb-3">
+            {{ form.name_on_certificate.label_tag }} {{ form.name_on_certificate|add_class:"form-control" }}
+        </div>
+        
+
+        <div class="mb-3">
+            {{ form.father_name.label_tag }} {{ form.father_name|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.address.label_tag }} {{ form.address|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.cnic.label_tag }} {{ form.cnic|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.chinese_name.label_tag }} {{ form.chinese_name|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.nationality.label_tag }} {{ form.nationality|add_class:"form-control" }}
+        </div>
+        <div class="mb-3">
+            {{ form.certificate_no_in_chinese.label_tag }} {{ form.certificate_no_in_chinese|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.gender.label_tag }} {{ form.gender|add_class:"form-select" }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.token_number.label_tag }} {{ form.token_number|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.test_type.label_tag }} {{ form.test_type|add_class:"form-control" }}
+        </div>
+
+        
+
+        <div class="mb-3">
+            {{ form.test_time.label_tag }} {{ form.test_time|add_class:"form-control" }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.image.label_tag }} {{ form.image|add_class:"form-control" }}
+        </div>
+        <div class="mb-3">
+            {{ form.listening_marks.label_tag }}
+            {{ form.listening_marks|add_class:"form-control" }}
+        </div>
+         <div class="mb-3">
+            {{ form.reading_marks.label_tag }}
+            {{ form.reading_marks|add_class:"form-control" }}
+        </div>
+         <div class="mb-3">
+            {{ form.writing_marks.label_tag }}
+            {{ form.writing_marks|add_class:"form-control" }}
+        </div>
+         <div class="mb-3">
+            {{ form.speaking_marks.label_tag }}
+            {{ form.speaking_marks|add_class:"form-control" }}
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{% url 'student_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

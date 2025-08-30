@@ -1,0 +1,16 @@
+<!-- templates/student_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Student</title>
+</head>
+<body>
+    <h2>Are you sure you want to delete "{{ student.name }}"?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'student_list' %}">Cancel</a>
+    </form>
+</body>
+</html>
