@@ -83,7 +83,7 @@ def student_delete(request, pk):
 def generate_qr(request, pk):
     base_url = request.build_absolute_uri('/')  # e.g. http://127.0.0.1:8000/
 
-    url = f"{base_url}/students/{pk}"   # This will open when user scans QR
+    url = f"{base_url}students/{pk}"   # This will open when user scans QR
     qr = qrcode.make(url)
 
     # Save to BytesIO (for response)
